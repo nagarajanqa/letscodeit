@@ -1,0 +1,16 @@
+function isStrPalindrome(str) {
+  let c = ''
+  for (i = str.length; i >= 0; i--) {
+    c = c + str.charAt(i)
+  }
+  console.log(c)
+  if (c == str) {
+    return 'The given string ' + str + ' is palindrome'
+  } else {
+    return 'The given string ' + str + ' is not palindrome'
+  }
+}
+
+let str = 'radar'
+let result = isStrPalindrome(str)
+console.log(result)
