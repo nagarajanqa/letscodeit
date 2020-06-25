@@ -1,29 +1,36 @@
-const assert = require("assert").strict;
-
-class CodeLibrary {
-
-  isPalindrome(str) {
-    let c = ''
+exports.isStrPalindrome = (str) => {
+  let result = '';
+  if (str == '') {
+    result = 'Passed string is empty';
+  } else if (str.indexOf(' ') !== -1) {
+    result = 'Passed string has space';
+  } else if (str.length < 3) {
+    result = 'String length is less than 3, not valid for palindrome check';
+  } else if (!isNaN(str)) {
+    result = 'Entered value is a number';
+  } else if (/^[a-zA-Z0-9]*$/.test(str) == false) {
+    result = 'String has special characters';
+  } else {
+    let c = '';
     for (let i = str.length - 1; i >= 0; i--) {
-      c = c + str.charAt(i)
+      c = c + str.charAt(i);
     }
-   return c==str;
+    result = c;
   }
-
-  removeExtraWhiteSpace1(str) {
-    let arr = str.split(" ")
-    let strVal = "";
-    console.log(arr)
-    for (let i = 0; i < arr.length; i++) {
-      strVal = strVal + arr[i];
-    }
-    return strVal;
-  }
-
-  removeExtraWhiteSpace(str) {
-    let strVal = s.replace(/\s+/g,' ').trim();
-    return strVal;
-  }
+  return result;
 }
 
-module.exports = CodeLibrary;
+exports.removeExtraWhiteSpace = (str) => {
+  let result = '';
+  if (str == '') {
+    result = 'Passed string is empty';
+  }
+  else if (!isNaN(str)) {
+    result = 'Entered value is a number';
+  } 
+  else
+  {
+  result = str.replace(/\s+/g, ' ').trim();
+  }
+  return result;
+}
