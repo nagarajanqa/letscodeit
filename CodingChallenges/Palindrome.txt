@@ -1,9 +1,8 @@
-function isStrPalindrome(str) {
+  function isStrPalindrome(str) {
   let c = ''
-  for (i = str.length; i >= 0; i--) {
+  for (i = str.length-1; i>=0; i--) {
     c = c + str.charAt(i)
   }
-  console.log(c)
   if (c == str) {
     return 'The given string ' + str + ' is palindrome'
   } else {
@@ -11,6 +10,6 @@ function isStrPalindrome(str) {
   }
 }
 
-let str = 'radar'
+let str = 'nagarajan'
 let result = isStrPalindrome(str)
 console.log(result)
