@@ -2,12 +2,10 @@ function removeSpace(str)
 {
 let arr=str.split(" ")
 let strVal="";
+console.log(arr)
 for(i=0;i<arr.length;i++)
-{
-  if(arr!="")
-  { 
+{  
  strVal=strVal+arr[i];
-}
 }
 return strVal;
 }
@@ -15,5 +13,3 @@ return strVal;
 let str="   this is a new string    "
 result=removeSpace(str)
 console.log(result)
-let val=str.replace(/\s/g, '') 
- console.log(val)
